@@ -1,0 +1,29 @@
+﻿# CMakeList.txt: OpenGL_Learning 的 CMake 项目，在此处包括源代码并定义
+# 项目特定的逻辑。
+#
+cmake_minimum_required (VERSION 3.20)
+project ("OpenGL_Learning")
+
+
+SET(SRC_LIST  "includes/OpenGL_Learning.h"  "includes/Shader_s.h" "includes/stb_image.h" "includes/stb_image.cpp")
+SET(MAIN_FILE  "Code/Transformation.cpp" )
+
+find_package(glfw3 CONFIG REQUIRED)
+
+find_package(glad CONFIG REQUIRED)
+
+find_package(glm CONFIG REQUIRED)
+   
+add_executable (OpenGL_Learning ${SRC_LIST} ${MAIN_FILE})
+
+message(STATUS "${OpenGL_INCLUDE_DIRS}")
+message(STATUS "${OpenGL_LIBRARY_DIRS}")
+message(STATUS "${OpenGL_DEFINITIONS}")
+#include_directories("includes/glm")
+#link_directories("includes/glm")
+#add_definitions("includes/glm")
+
+target_link_libraries(OpenGL_Learning PRIVATE glfw)
+target_link_libraries(OpenGL_Learning PRIVATE glad::glad)
+#target_link_libraries(OpenGL_Learning "includes/glm")
+target_link_libraries(OpenGL_Learning PRIVATE glm::glm)
