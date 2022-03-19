@@ -6,24 +6,17 @@ project ("OpenGL_Learning")
 
 
 SET(SRC_LIST  "includes/OpenGL_Learning.h"  "includes/Shader_s.h" "includes/stb_image.h" "includes/stb_image.cpp" "includes/camera.h")
-SET(MAIN_FILE  "Code/Camera.cpp")
+SET(MAIN_FILE "Code/CameraTransform.cpp")
 
 find_package(glfw3 CONFIG REQUIRED)
-
 find_package(glad CONFIG REQUIRED)
-
 find_package(glm CONFIG REQUIRED)
    
-add_executable (OpenGL_Learning ${SRC_LIST} ${MAIN_FILE})
+add_executable (OpenGL_Learning ${SRC_LIST} ${MAIN_FILE} "Code/CameraTransform.cpp")
 
-message(STATUS "${OpenGL_INCLUDE_DIRS}")
-message(STATUS "${OpenGL_LIBRARY_DIRS}")
-message(STATUS "${OpenGL_DEFINITIONS}")
-#include_directories("includes/glm")
-#link_directories("includes/glm")
-#add_definitions("includes/glm")
+
+
 
 target_link_libraries(OpenGL_Learning PRIVATE glfw)
 target_link_libraries(OpenGL_Learning PRIVATE glad::glad)
-#target_link_libraries(OpenGL_Learning "includes/glm")
 target_link_libraries(OpenGL_Learning PRIVATE glm::glm)
