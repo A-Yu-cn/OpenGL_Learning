@@ -39,11 +39,12 @@ int main()
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
-
+    //std::string root_path = "D:\\Projects\\Render\\OpenGL_Learning\\";
+    std::string root_path = "..\\..\\..\\";
     // build and compile our shader zprogram
     // ------------------------------------
-    Shader ourShader("D:\\Projects\\OpenGL_Learning\\resources\\Shaders\\5.1.transform.vs",
-        "D:\\Projects\\OpenGL_Learning\\resources\\Shaders\\5.1.transform.fs");
+    Shader ourShader( (root_path + "resources\\Shaders\\5.1.transform.vs").c_str(),
+        (root_path + "resources\\Shaders\\5.1.transform.fs").c_str());
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -95,7 +96,7 @@ int main()
     // load image, create texture and generate mipmaps
     int width, height, nrChannels;
     stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
-    unsigned char* data = stbi_load("D:\\Projects\\OpenGL_Learning\\resources\\textures\\container.jpg", &width, &height, &nrChannels, 0);
+    unsigned char* data = stbi_load((root_path + "resources\\textures\\container.jpg").c_str(), &width, &height, &nrChannels, 0);
     if (data)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -117,7 +118,7 @@ int main()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     // load image, create texture and generate mipmaps
-    data = stbi_load("D:\\Projects\\OpenGL_Learning\\resources\\textures\\awesomeface.png", &width, &height, &nrChannels, 0);
+    data = stbi_load((root_path + "resources\\textures\\awesomeface.png").c_str(), &width, &height, &nrChannels, 0);
     if (data)
     {
         // note that the awesomeface.png has transparency and thus an alpha channel, so make sure to tell OpenGL the data type is of GL_RGBA
