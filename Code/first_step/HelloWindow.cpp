@@ -1,7 +1,7 @@
 ﻿// OpenGL_Learning.cpp: 定义应用程序的入口点。
 //
 
-#include "../includes/OpenGL_Learning.h"
+#include "../../includes/OpenGL_Learning.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);

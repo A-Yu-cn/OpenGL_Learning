@@ -6,13 +6,16 @@ project ("OpenGL_Learning")
 
 
 SET(SRC_LIST  "includes/OpenGL_Learning.h"  "includes/Shader_s.h" "includes/stb_image.h" "includes/stb_image.cpp" "includes/camera.h")
-SET(MAIN_FILE "Code/CameraTransform.cpp")
+SET(MAIN_FILE   "Code/lighting/Materials.cpp")
 
 find_package(glfw3 CONFIG REQUIRED)
 find_package(glad CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
    
-add_executable (OpenGL_Learning ${SRC_LIST} ${MAIN_FILE} "Code/CameraTransform.cpp")
+include_directories(${PROJECT_SOURCE_DIR})
+
+# 将指定姆露露添加到头文件搜索路径下
+add_executable (OpenGL_Learning ${SRC_LIST} ${MAIN_FILE} )
 
 
 

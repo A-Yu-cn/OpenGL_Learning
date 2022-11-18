@@ -1,4 +1,4 @@
-#include "../includes/OpenGL_Learning.h"
+#include "../../includes/OpenGL_Learning.h"
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
