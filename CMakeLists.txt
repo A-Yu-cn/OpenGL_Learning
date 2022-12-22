@@ -5,8 +5,9 @@ cmake_minimum_required (VERSION 3.20)
 project ("OpenGL_Learning")
 
 
+set(CMAKE_CXX_STANDARD 17)
 SET(SRC_LIST  "includes/OpenGL_Learning.h"  "includes/Shader_s.h" "includes/stb_image.h" "includes/stb_image.cpp" "includes/camera.h")
-SET(MAIN_FILE    "Code/lighting/lighting_maps_specular.cpp")
+SET(MAIN_FILE    "Code/lighting/light_casters_directional.cpp")
 
 find_package(glfw3 CONFIG REQUIRED)
 find_package(glad CONFIG REQUIRED)
@@ -16,7 +17,6 @@ include_directories(${PROJECT_SOURCE_DIR})
 
 # 将指定姆露露添加到头文件搜索路径下
 add_executable (OpenGL_Learning ${SRC_LIST} ${MAIN_FILE} )
-
 
 
 
