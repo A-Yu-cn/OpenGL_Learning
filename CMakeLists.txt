@@ -6,7 +6,7 @@ project ("OpenGL_Learning")
 
 
 SET(SRC_LIST  "includes/OpenGL_Learning.h"  "includes/Shader_s.h" "includes/stb_image.h" "includes/stb_image.cpp" "includes/camera.h")
-SET(MAIN_FILE    "Code/lighting/light_casters_point.cpp")
+SET(MAIN_FILE    "Code/lighting/light_casters_spot_soft.cpp")
 
 find_package(glfw3 CONFIG REQUIRED)
 find_package(glad CONFIG REQUIRED)
