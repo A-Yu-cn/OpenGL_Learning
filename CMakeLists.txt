@@ -8,7 +8,7 @@ project ("OpenGL_Learning")
 include_directories(${PROJECT_SOURCE_DIR}/includes)
 
 SET(SRC_LIST  "includes/OpenGL_Learning.h"  "includes/Shader_s.h" "includes/stb_image.h" "includes/stb_image.cpp" "includes/camera.h")
-SET(MAIN_FILE    "Code/lighting/light_casters_directional.cpp")
+SET(MAIN_FILE    "Code/lighting/multiLights.cpp")
 
 find_package(glfw3 CONFIG REQUIRED)
 find_package(glad CONFIG REQUIRED)

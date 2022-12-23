@@ -1,4 +1,4 @@
-#include "../../includes/OpenGL_Learning.h"
+#include "OpenGL_Learning.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -67,8 +67,8 @@ int main()
 
     // build and compile our shader zprogram
     // ------------------------------------
-    Shader lightingShader("6.multiple_lights.vs", "6.multiple_lights.fs");
-    Shader lightCubeShader("6.light_cube.vs", "6.light_cube.fs");
+    Shader lightingShader("../../resources/Shaders/6.multiple_lights.vs", "../../resources/Shaders/6.multiple_lights.fs");
+    Shader lightCubeShader("../../resources/Shaders/3.1.light_cube.vs", "../../resources/Shaders/3.1.light_cube.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -164,8 +164,8 @@ int main()
 
     // load textures (we now use a utility function to keep the code more organized)
     // -----------------------------------------------------------------------------
-    unsigned int diffuseMap = loadTexture(FileSystem::getPath("resources/textures/container2.png").c_str());
-    unsigned int specularMap = loadTexture(FileSystem::getPath("resources/textures/container2_specular.png").c_str());
+    unsigned int diffuseMap = loadTexture("../../resources/textures/container2.png");
+    unsigned int specularMap = loadTexture("../../resources/textures/container2_specular.png");
 
     // shader configuration
     // --------------------
