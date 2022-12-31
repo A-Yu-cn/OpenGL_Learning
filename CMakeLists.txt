@@ -8,8 +8,8 @@ project ("OpenGL_Learning")
 include_directories(${PROJECT_SOURCE_DIR}/includes)
 
 SET(SRC_LIST  "includes/OpenGL_Learning.h"  "includes/Shader_s.h" "includes/stb_image.h" "includes/stb_image.cpp" 
-        "includes/camera.h" "includes/mesh.h" "includes/model.h")
-SET(MAIN_FILE    "Code/advanced_opengl/blending_sorted.cpp") # 此处为入口文件也即main函数.cpp文件路径
+        "includes/camera.h" "includes/mesh.h" "includes/model.h" "includes/screenshot.h")
+SET(MAIN_FILE    "Code/advanced_opengl/framebuffers.cpp") # 此处为入口文件也即main函数.cpp文件路径
 
 find_package(glfw3 CONFIG REQUIRED)
 find_package(glad CONFIG REQUIRED)

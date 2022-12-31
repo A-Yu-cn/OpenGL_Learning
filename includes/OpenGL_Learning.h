@@ -9,6 +9,7 @@
 #include "shader_s.h"
 #include "camera.h"
 #include "model.h"
+#include "screenshot.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
