@@ -69,7 +69,9 @@ int main()
     // build and compile shaders
     // -------------------------
     Shader shader("../../resources/Shaders/3.1.blending.vs", "../../resources/Shaders/3.2.blending.fs");
-    Shader screenShader("../../resources/Shaders/5.1.framebuffers_screen.vs", "../../resources/Shaders/5.1.framebuffers_screen.fs");
+    //Shader screenShader("../../resources/Shaders/5.1.framebuffers_screen.vs", "../../resources/Shaders/5.1.framebuffers_screen.fs");
+    // 后处理效果
+    Shader screenShader("../../resources/Shaders/5.1.framebuffers_screen.vs", "../../resources/Shaders/5.1.framebuffers_screen_post.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
