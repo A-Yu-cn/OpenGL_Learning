@@ -65,8 +65,13 @@ int main()
 
     // build and compile shaders
     // -------------------------
-    Shader shader("../../resources/Shaders/6.2.cubemaps.vs", "../../resources/Shaders/6.2.cubemaps.fs");
+    //Shader shader("../../resources/Shaders/6.2.cubemaps.vs", "../../resources/Shaders/6.2.cubemaps.fs");
+    Shader shader("../../resources/Shaders/6.2.cubemaps.vs", "../../resources/Shaders/6.2.cubemaps_refract.fs");
     Shader skyboxShader("../../resources/Shaders/6.2.skybox.vs", "../../resources/Shaders/6.2.skybox.fs");
+    Shader shaderM("../../resources/Shaders/6.2.cube_model.vs", "../../resources/Shaders/6.2.cube_model.fs");
+    // load models
+    // -----------
+    Model ourModel("../../resources/nanosuit_reflection/nanosuit.obj");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -236,6 +241,19 @@ int main()
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
 
+        // render the loaded model
+        shaderM.use();
+        glm::mat4 model1 = glm::mat4(1.0f);
+        model1 = glm::translate(model1, glm::vec3(1.0f, 1.0f, 1.0f)); // translate it down so it's at the center of the scene
+        model1 = glm::scale(model1, glm::vec3(0.1f, 0.1f, 0.1f));	// it's a bit too big for our scene, so scale it down
+        shaderM.setMat4("model", model1);
+        shaderM.setMat4("view", view);
+        shaderM.setMat4("projection", projection);
+        shaderM.setVec3("cameraPos", camera.Position);
+        glActiveTexture(GL_TEXTURE3);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
+        ourModel.Draw(shaderM);
+        
         // draw skybox as last
         glDepthFunc(GL_LEQUAL);  // change depth function so depth test passes when values are equal to depth buffer's content
         skyboxShader.use();
