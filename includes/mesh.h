@@ -96,7 +96,7 @@ public:
         glActiveTexture(GL_TEXTURE0);
     }
 
-private:
+public://这里本应该为private ，为了实例化而修改（并不合理）
     // render data 
     unsigned int VBO, EBO;
 
