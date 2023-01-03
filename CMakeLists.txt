@@ -5,7 +5,7 @@ cmake_minimum_required (VERSION 3.20)
 project (OpenGL_Learning)
 
 set(SRC_LIST)
-set(MAIN_FILE  "Code/advanced_opengl/shadow_mapping.cpp") # 此处为入口文件也即main函数.cpp文件路径
+set(MAIN_FILE  "Code/advanced_opengl/point_shadows.cpp") # 此处为入口文件也即main函数.cpp文件路径
 set ( PRJ_LIBRARIES )
 set ( PRJ_INCLUDE_DIRS )
 set ( IMGUI_HOME "includes/imgui")
