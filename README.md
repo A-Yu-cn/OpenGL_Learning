@@ -12,3 +12,5 @@ vcpkg install glad:x64-windows
 vcpkg install glm:x64-windows
 
 资源链接：[LearnOpenGL.CN](https://learnopengl-cn.gitee.io/)
+
+官方代码：[learnOpenGL](https://github.com/JoeyDeVries/LearnOpenGL)
